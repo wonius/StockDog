@@ -18,7 +18,7 @@ angular.module('stockDogApp')
         //2. 初始化不变量
         $scope.watchlist = {};
         var addListModal = $modal({
-          $scope: $scope,
+          scope: $scope,
           template: 'views/templates/addlist-modal.html',
           show: false
         });
