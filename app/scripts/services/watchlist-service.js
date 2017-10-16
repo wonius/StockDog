@@ -27,7 +27,7 @@ angular.module('stockDogApp')
         });
 
         if (existingStock) {
-          existingStock.shares +=stock.shares;
+          existingStock.shares += stock.shares;
         } else {
           _.extend(stock, StockModel);
           this.stocks.push(stock);
@@ -38,7 +38,7 @@ angular.module('stockDogApp')
 
       removeStock: function (stock) {
         _.remove(this.stocks, function (s) {
-          return s.company.symbbol === stock.company.symbol;
+          return s.company.symbol === stock.company.symbol;
         });
         this.recalculate();
         saveModel();
@@ -50,7 +50,7 @@ angular.module('stockDogApp')
           calcs.marketValue += stock.marketValue;
           calcs.dayChange += stock.dayChange;
           return calcs;
-        }, {shares: 0, marketValue: 0, dayChange: 0});
+        }, { shares: 0, marketValue: 0, dayChange: 0 });
 
         this.shares = calcs.shares;
         this.marketValue = calcs.marketValue;
@@ -84,8 +84,8 @@ angular.module('stockDogApp')
 
     //3.辅助方法： 使用lodash找到指定Id的监视列表
     var findById = function (listId) {
-      return _.find(Model.watchlists, function (watchList) {
-        return watchList.id === parseInt(listId);
+      return _.find(Model.watchlists, function (watchlist) {
+        return watchlist.id === parseInt(listId);
       });
     };
 
@@ -108,13 +108,13 @@ angular.module('stockDogApp')
     };
 
     //6.删除
-    this.remove = function (watchList) {
+    this.remove = function (watchlist) {
       _.remove(Model.watchlists, function (list) {
-        return list.id === watchList.id;
+        return list.id === watchlist.id;
       });
       saveModel();
     };
 
     //7. 初始化模型
-    var Model = new loadModel();
+    var Model = loadModel();
   });
