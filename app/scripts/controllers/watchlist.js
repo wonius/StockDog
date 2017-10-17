@@ -30,7 +30,8 @@ angular.module('stockDogApp')
     $scope.addStock = function () {
       $scope.watchlist.addStock({
         listId: $routeParams.listId,
-        company: $scope.newStock.company,
+        // company: $scope.newStock.company,
+        company: _.find($scope.companies, function(o){return o.label==$scope.newStock.company}),
         shares: $scope.newStock.shares
       });
       addStockModal.hide();
