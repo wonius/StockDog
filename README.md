@@ -1,6 +1,6 @@
 # StockDog
 
-##Bug
+## Bug
 1. 项目中使用了Lodash框架，main.js中使用了_.contains()函数，该函数是不存在的。
 
 fix：
