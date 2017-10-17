@@ -2,6 +2,7 @@
 
 ##Bug
 1. 项目中使用了Lodash框架，main.js中使用了_.contains()函数，该函数是不存在的。
+
 fix：
 ```
       // if (_.contains(path, 'watchlist')) {
@@ -13,7 +14,8 @@ fix：
 ```
 
 2. 按照书上的教程，敲完1.5章节的代码后，发现右侧列表一片空白，而且也无法添加新的股票。
-调试后发现，company变量没有symbol属性，导致addStock、{{stock.company.symbol}}报错
+调试后发现，company变量没有symbol属性，导致addStock、{{stock.company.symbol}}报错。
+
 fix：
 ```
       $scope.watchlist.addStock({
