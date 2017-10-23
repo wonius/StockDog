@@ -35,4 +35,12 @@ fix：
     var url = BASE + '?' + 'q=' + query + '&format=json&diagnostics=true' +
         '&env=store://datatables.org/alltableswithkeys';
 ```
+PS：该服务极不稳定，经常返回异常。
 想查看其他api，请访问 https://developer.yahoo.com/yql/console/
+
+4. 股票显示页面报错。ng-repeat中增加`track by $index`
+fix：
+```
+        <p ng-repeat="stock in stocks track by $index">{{stock.company.symbol}}</p>
+
+```
