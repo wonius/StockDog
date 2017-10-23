@@ -27,6 +27,7 @@ fix：
 ```
 
 3. 敲完1.6章节后，注册QuoteService，请求yql获取数据，无法获取正确数据。原来之前的api已经不能使用。
+
 fix：
 ```
     var BASE = 'https://query.yahooapis.com/v1/public/yql';
@@ -39,6 +40,7 @@ PS：该服务极不稳定，经常返回异常。
 想查看其他api，请访问 https://developer.yahoo.com/yql/console/
 
 4. 股票显示页面报错。ng-repeat中增加`track by $index`。
+
 fix：
 ```
         <p ng-repeat="stock in stocks track by $index">{{stock.company.symbol}}</p>
