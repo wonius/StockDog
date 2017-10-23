@@ -26,3 +26,13 @@ fix：
       });
 ```
 
+3. 敲完1.6章节后，注册QuoteService，请求yql获取数据，无法获取正确数据。原来之前的api已经不能使用。
+fix：
+```
+    var BASE = 'https://query.yahooapis.com/v1/public/yql';
+    var query = encodeURIComponent('select * from yahoo.finance.quotes ' +
+        'where symbol in (\"' + symbols.join('\",\"') + '\")');
+    var url = BASE + '?' + 'q=' + query + '&format=json&diagnostics=true' +
+        '&env=store://datatables.org/alltableswithkeys';
+```
+想查看其他api，请访问 https://developer.yahoo.com/yql/console/
