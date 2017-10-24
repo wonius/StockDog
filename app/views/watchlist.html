@@ -27,7 +27,10 @@
         </div>
 
         <!--1. 遍历所有的股票并显示公司符号-->
-        <p ng-repeat="stock in stocks">{{stock.company.symbol}}</p>
+        <!--<p ng-repeat="stock in stocks track by $index">{{stock.company.symbol}}</p>-->
+
+        <!--2. 动态显示股票信息-->
+        <stk-stock-table ng-show="stocks.length" wathclist="watchlist"></stk-stock-table>
       </div>
     </div>
 
