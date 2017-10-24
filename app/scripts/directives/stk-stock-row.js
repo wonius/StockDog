@@ -33,19 +33,19 @@ angular.module('stockDogApp')
 
         // 6. 在$destory 上使用QuoteService取消公司的注册
         $scope.$on('$destroy', function () {
-          stockTableCtrl.removeStock($scope);
+          stockTableCtrl.removeRow($scope);
           QuoteService.deregister($scope.stock);
         });
 
         // 7. 如果这是最后一行，立即抓取报价
         if ($scope.isLast) {
-          $timeout(QuoteService.fetch());
+          $timeout(QuoteService.fetch);
         }
 
         // 8. 监视份额的变化并重新计算
         $scope.$watch('stock.shares', function () {
           $scope.stock.marketValue = $scope.stock.shares * $scope.stock.lastPrice;
-          $scope.stock.dayChange = $scope.stock.shares * parseFloat($scope.stock.Change);
+          $scope.stock.dayChange = $scope.stock.shares * parseFloat($scope.stock.change);
           $scope.stock.save();
         });
       }
