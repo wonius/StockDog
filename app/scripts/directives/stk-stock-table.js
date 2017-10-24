@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc directive
- * @name stockDogApp.directive:stkStockTabble
+ * @name stockDogApp.directive:stkStockTable
  * @description
- * # stkStockTabble
+ * # stkStockTable
  */
 angular.module('stockDogApp')
   .directive('stkStockTable', function () {

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: stkStockTabble', function () {
+describe('Directive: stkStockTable', function () {
 
   // load the directive's module
   beforeEach(module('stockDogApp'));
@@ -15,6 +15,6 @@ describe('Directive: stkStockTabble', function () {
   it('should make hidden element visible', inject(function ($compile) {
     element = angular.element('<stk-stock-tabble></stk-stock-tabble>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the stkStockTabble directive');
+    expect(element.text()).toBe('this is the stkStockTable directive');
   }));
 });
