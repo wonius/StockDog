@@ -61,7 +61,7 @@ angular.module('stockDogApp')
       $http.jsonp(url + '&callback=JSON_CALLBACK')
         .success(function (data) {
           if (data.query.count) {
-            var quotes = data.query.count > 1 ? data.query.results.quote() : [data.query.results.quote];
+            var quotes = data.query.count > 1 ? data.query.results.quote : [data.query.results.quote];
             update(quotes);
           }
         })
