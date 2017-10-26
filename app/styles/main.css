@@ -1,3 +1,9 @@
+/*仪表盘视图样式*/
+.well {
+  background-color: white;
+  text-align: center;
+}
+
 /*
   股票表格样式
  */
